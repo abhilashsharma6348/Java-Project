@@ -109,8 +109,6 @@ public class Use_Linked_List {
    }
  
 // method to insert a node into a linkedList in a sorted way 
-// want to work on the code optimization technique
-  
   public static Linked_List insertintosorted(Linked_List lst1, int data) {
 	  Linked_List.Node ptr1 = lst1.head;
 	  Linked_List.Node ptr2 = null;
