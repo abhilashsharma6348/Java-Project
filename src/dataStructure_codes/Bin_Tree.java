@@ -109,11 +109,9 @@ public class Bin_Tree {
 		Tree ptr_right = head.right;
 		if(ptr_left != null) {
 			left_child_size = left_child_size + size(ptr_left);
-		//	ptr_left = ptr_left.left;
 		}
 		if(ptr_right != null) {
 			right_child_size = right_child_size + size(ptr_right);
-		//	ptr_right = ptr_right.right;
 		}
 		return(left_child_size+right_child_size+1);
 	}
