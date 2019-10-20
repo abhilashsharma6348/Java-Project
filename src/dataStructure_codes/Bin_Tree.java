@@ -97,7 +97,28 @@ public class Bin_Tree {
 		}
 		return head;
 	}
+	
+	// function for finding a size of the binary tree
+	public static int size(Tree head) {
+		int left_child_size = 0;
+		int right_child_size = 0;
+		if(head == null) {
+			return 0;
+		}
+		Tree ptr_left = head.left;
+		Tree ptr_right = head.right;
+		if(ptr_left != null) {
+			left_child_size = left_child_size + size(ptr_left);
+		//	ptr_left = ptr_left.left;
+		}
+		if(ptr_right != null) {
+			right_child_size = right_child_size + size(ptr_right);
+		//	ptr_right = ptr_right.right;
+		}
+		return(left_child_size+right_child_size+1);
+	}
 
+	// main function for testing and validating the function
 	public static void main(String[] args) {
 		Tree head = new Tree();
 		head.data = 34;
@@ -107,8 +128,10 @@ public class Bin_Tree {
 		head = Bin_Tree.insert(head, 78);
 		head = Bin_Tree.insert(head, 21);
 		head = Bin_Tree.insert(head, 99);
+		head = Bin_Tree.insert(head, 50);
 		Bin_Tree.display(head);
-		System.out.println("Height of Binary Tree:"+Bin_Tree.depth(head));
-		System.out.println(Bin_Tree.search(head, 99));
+//		System.out.println("Height of Binary Tree:"+Bin_Tree.depth(head));
+//		System.out.println(Bin_Tree.search(head, 43));
+		System.out.println("Size of the binary tree:"+ Bin_Tree.size(head));
 	}
 }
